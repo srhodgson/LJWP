@@ -24,5 +24,44 @@ public class NestedLoops {
                 System.out.println(i + ", " + j);
             }
         }
+
+        System.out.println("----------------");
+
+        System.out.println("i, j"); // placed BEFORE label!!
+        OUTERLOOP:
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 5; j++) {
+                if (j == 3) {
+                    break OUTERLOOP; // case sensitive
+                }
+                System.out.println(i + ", " + j);
+            }
+        }
+        System.out.println("here");
+
+        System.out.println("----------------");
+
+        System.out.println("i, j");
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 5; j++) {
+                if (j == 3) {
+                    continue; // next iteration
+                }
+                System.out.println(i + ", " + j);
+            }
+        }
+
+        System.out.println("----------------");
+
+        System.out.println("i, j\n===="); // placed BEFORE label!!
+        OUTERLOOP:
+        for (int i = 1; i <= 3; i++) {
+            for (int j = 1; j <= 5; j++) {
+                if (j == 3) {
+                    continue OUTERLOOP; // continues with OUTERLOOP
+                }
+                System.out.println(i + ", " + j);
+            }
+        }
     }
 }
