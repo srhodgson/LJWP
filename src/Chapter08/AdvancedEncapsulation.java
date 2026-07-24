@@ -1,5 +1,7 @@
 package Chapter08;
 
+import java.util.Arrays;
+
 class Seniors {
     private int[] ages = new int[2];
     private int num;
@@ -11,8 +13,9 @@ class Seniors {
     }
 
     public int getNum() { return num; }
-    public int[] getAges() { // breaks encapsulation
-        return ages;
+    public int[] getAges() { // properly encapsulated
+        int newArr[] = Arrays.copyOf(ages, 2);
+        return newArr;
     }
 }
 
