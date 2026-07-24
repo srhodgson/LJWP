@@ -12,9 +12,16 @@ class Adult {
     public String getName(){ return name; }
     public void setName(String name) { this.name = name; }
     public int getAge() { return age; }
-    public void setAge(int age) { this.age = age; }
-
-
+    public void setAge(int age) {
+        if (isAgeOk(age)){
+            this.age = age;
+        } else {
+            this.age = -1; // error state
+        }
+    }
+    private boolean isAgeOk(int age) { // private
+        return age >= 18 ? true : false; // ternary operator
+    }
 }
 
 public class BasicEncapsulation {
